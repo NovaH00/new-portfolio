@@ -308,7 +308,7 @@ body {
     flex-wrap: wrap;
     gap: 20px;
     
-    background-image: url(data/img/coding-bg.png);
+    background-image: url(../data/img/coding-bg.png);
 
 }
 
