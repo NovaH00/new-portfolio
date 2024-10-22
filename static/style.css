@@ -1,0 +1,214 @@
+@import url('https://fonts.cdnfonts.com/css/cascadia-code');
+
+body {
+    background-color: rgb(20, 20, 20);
+    margin: 0px;
+}
+
+#menu {
+    height: 100vh;
+    display: flex;
+    
+    align-items: center;
+    margin-bottom: 200px;
+}
+
+.menu-item {
+    color: white;
+    font-size: clamp(3rem, 8vw, 4rem);
+    font-family: "Ibarra Real Nova", serif;
+    display: block;
+    text-decoration: none;
+    padding: clamp(0.25rem, 0.5vw, 1rem) 0rem;
+    margin-left: 50px ;
+    transition: opacity 400ms ease, transform 0.5s ease;
+}
+#menu-items{
+    margin-left: clamp(4rem, 25vw, 48rem);
+    position: relative;
+    z-index: 2;
+}
+
+#menu-items:hover > .menu-item{
+    opacity: 0.3;
+}
+
+#menu-items:hover > .menu-item:hover {
+    opacity: 1;
+    transform: translateY(-5px);
+}
+
+
+.background-items {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    color: gray;
+    font-family: "Cascadia code", serif;
+    font-size: clamp(3rem, 2vw, 4rem);
+    position: absolute;
+    z-index: 1;
+    
+    margin-left: clamp(4rem, 3vw, 48rem);
+    padding: clamp(3rem, 4vw, 5rem) 0rem;
+    opacity: 1; /* Default opacity */
+    transform: translateX(0); /* Default position */
+    transition: transform 1s ease, opacity 0.4s ease; /* Combine transitions */
+}
+
+.reduce-opacity-and-move-left {
+    opacity: 0.3;
+    transform: translateX(-1vw);
+    transition: transform 1s ease, opacity 0.4s ease;
+}
+
+.move-right {
+    transform: translateX(1vw);
+    transition: transform 1s ease;
+}
+
+.move-nothing{
+    transform: translateX(0);
+    transition: transform 1s ease;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    position: relative;
+    background-color: grey;
+    z-index: 3;
+    font-family: "Ibarra Real Nova", serif;
+    font-size: clamp(1rem, 2vw, 3rem);
+    background: rgb(20, 20, 20);
+    border-bottom: 2px solid white;
+}
+
+
+
+#menu[data-active-Index="0"] > .background-items{
+    transform: translateY(17%); 
+}
+
+#menu[data-active-Index="1"] > .background-items{
+    transform: translateY(8%);
+
+}
+
+#menu[data-active-Index="2"] > .background-items{
+    transform: translateY(0);
+}
+
+#menu[data-active-Index="3"] > .background-items{
+    transform: translateY(-8%);
+}
+
+#menu[data-active-Index="4"] > .background-items{
+    transform: translateY(-17%);
+}
+
+#arrows{
+    color: gray;
+    font-family: "Cascadia code", serif;
+    font-size: clamp(3rem, 2vw, 4rem);
+    z-index: 1;
+    margin-left: 20vw;
+    padding: 30px;
+
+}
+
+@keyframes wave {
+    0%, 20% {
+        transform: translateY(0); /* All arrows at the top */
+    }
+    40% {
+        transform: translateY(50px); /* The current arrow moves down */
+    }
+    60% {
+        transform: translateY(0); /* Current arrow returns to the top */
+    }
+}
+
+.arrows {
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* No gap between arrows */
+}
+
+.arrows > .arrow {
+    display: flex;
+    align-items: center;
+    width: 100px;
+    height: 100px; /* Adjust height to fit content */
+    margin: 0; /* Ensure no additional margins */
+    padding: 0; /* Ensure no extra padding */
+}
+
+.arrow-char{
+    transform: rotate(90deg);
+    
+}
+
+/* Assign animations to each arrow with staggered delays */
+.arrows > .arrow:nth-child(1) {
+    animation: wave 3s ease-in-out infinite; /* Change duration to 3s */
+}
+
+.arrows > .arrow:nth-child(2) {
+    animation: wave 3s ease-in-out infinite;
+    animation-delay: 0.5s; /* Adjust delay accordingly */
+}
+
+.arrows > .arrow:nth-child(3) {
+    animation: wave 3s ease-in-out infinite;
+    animation-delay: 1s; /* Adjust delay accordingly */
+}
+
+.arrows > .arrow:nth-child(4) {
+    animation: wave 3s ease-in-out infinite;
+    animation-delay: 1.5s; /* Adjust delay accordingly */
+}
+
+.arrows > .arrow:nth-child(5) {
+    animation: wave 3s ease-in-out infinite;
+    animation-delay: 2s; /* Adjust delay accordingly */
+}
+
+#transition{
+    display: flex;
+    width: 100vw;
+    height: 1000px;
+    background: linear-gradient(to bottom, rgb(20,20,20), #e6e6e6);
+    /* border: 2px solid white; */
+    padding-bottom: 100px;
+    justify-content: center;
+}
+
+#section-container{
+    display: flex;
+    background-color: #e6e6e6;
+    justify-content: center;
+}
+
+#section-container > .about-me{
+    display: flex;
+    justify-content: center;
+    width: 70vw;
+    height: 500px;
+    /* border: 2px solid red; */
+}
+
+
+#section-container > .about-me > .title{
+    font-family: 'Cascadia Code', sans-serif;
+    font-size: clamp(3rem, 2vw, 4rem);
+}
+
+.about-me{
+    transition: box-shadow 1s ease;
+}
+#section-container > .about-me:hover{   
+    box-shadow: 20px 20px 20px black, -20px -20px 20px white;
+    transition: box-shadow 1s ease;
+}
