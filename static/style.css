@@ -2,15 +2,21 @@
 
 body {
     background-color: rgb(20, 20, 20);
-    margin: 0px;
+    overflow-x:hidden;
+    
 }
+
+
 
 #menu {
     height: 100vh;
     display: flex;
-    
+    width: 100vw;
     align-items: center;
     margin-bottom: 200px;
+    overflow: hidden;
+    padding: 0px;
+    margin: 0px;
 }
 
 .menu-item {
@@ -83,6 +89,8 @@ body {
     font-size: clamp(1rem, 2vw, 3rem);
     background: rgb(20, 20, 20);
     border-bottom: 2px solid white;
+    padding: 0px;
+    margin: 0px;
 }
 
 
@@ -114,7 +122,7 @@ body {
     font-size: clamp(3rem, 2vw, 4rem);
     z-index: 1;
     margin-left: clamp(6vw, 10vw, 12vw);
-    padding: 30px;
+    padding: 0px;
 
 }
 
@@ -183,13 +191,16 @@ body {
     /* border: 2px solid white; */
     padding-bottom: 100px;
     justify-content: center;
+    overflow: hidden;
 }
 
 #section-container{
     display: flex;
+    height: auto;
     background-color: #e6e6e6;
     flex-direction: column;
     align-items: center;
+    width: 100vw;
     
 }
 
@@ -235,8 +246,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0;
     width: 100vw;
-    height: 1000px;
+    height: auto;
     background-color:  rgb(20, 20, 20);
     /* border: 4px solid red; */
     
@@ -250,8 +262,9 @@ body {
     font-family: 'Cascadia Code', sans-serif;
     position: relative;
     display: flex;
+    justify-content: center;
     align-items: center;
-    width: 11vw;
+    width: 12vw;
     height: 4vw;
     padding: 10px;
     background-color: #1c1f2b;
@@ -309,6 +322,8 @@ body {
     gap: 20px;
     
     background-image: url(../data/img/coding-bg.png);
+
+    margin-bottom: 100px;
 
 }
 
@@ -399,4 +414,104 @@ body {
     background-color: white;
     color: black;
     cursor: pointer;
+}
+
+#section-container > #transition-3{
+    display: flex;
+    width: 100vw;
+    height: 1000px;
+    background: linear-gradient(to bottom, rgb(20,20,20), #e6e6e6);
+    /* border: 2px solid white; */
+    padding-bottom: 0px;
+    justify-content: flex-start;
+    overflow: hidden;
+    margin: 0px;
+}
+
+#transition-3 > .line-1{
+    width: 50px;
+    height: 1500px;
+    border-left: 5px solid rgb(20, 20, 20);
+    border-bottom: 5px solid rgb(20, 20, 20);
+    margin-left: 20vw;
+    border-radius: 0 0 0 20px;
+}
+
+#education{
+    width: 100vw;
+    height: 1000px;
+    background-color: #e6e6e6;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#education > .lines{
+    width: 100vw;
+    height: auto;
+}
+
+#education > .lines > .line-2{
+    width: calc(60vw - 20px);
+    height: 100px;
+    border-left: 5px solid rgb(20, 20, 20);
+    border-bottom: 5px solid rgb(20, 20, 20);
+
+    margin-left: 20vw;
+    border-radius: 0 0 0 20px;
+}
+
+#education > .lines > .line-3{
+    position: relative;
+    display: flex;
+    width: 20px;
+    height: 100px;
+    border-right: 5px solid rgb(20, 20, 20);
+    border-top: 5px solid rgb(20, 20, 20);
+    margin-top: -5px;
+    margin-left: calc(80vw - 20px);
+    border-radius: 0 20px 0 0;
+}
+
+#education > .education-cards{
+    z-index: 0;
+}
+
+#education > .education-cards > .title-card{
+    position: relative;
+    width: 200px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px rgb(20, 20, 20) solid;
+    border-radius: 10px;
+    margin-left: 60vw;
+    background-color: #beedf4;
+    z-index: 3;
+
+    transform: translate(5%, -120%);
+
+}
+
+
+
+#education > .education-cards > .title-card > .content{
+    font-family: 'Cascadia Code', sans-serif;
+    font-size: 2rem;
+
+}
+
+#education > .education-cards > .background-card-1{
+    position: relative;
+    width: 200px;
+    height: 100px;
+    /* border: 2px solid red; */
+    background-color: #67c8d5;
+
+    padding: 5px;
+    border-radius: 10px;
+    transform: translate(7%, -10%);
+    z-index: 1;
+    margin-left: 60vw;
+    box-shadow: 3px 3px 3px black;
 }
